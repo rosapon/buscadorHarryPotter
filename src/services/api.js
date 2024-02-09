@@ -8,7 +8,9 @@ const getDataFromApi = () => {
                 name: character.name,
                 species: character.species,
                 id: character.id,
-                house: character.house
+                house: character.house,
+                status: character.alive ? "Vivo" : "Muerto",
+                gender: character.gender
             };
         });
         return cleanData;
