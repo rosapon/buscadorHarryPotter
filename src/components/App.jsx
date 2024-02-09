@@ -5,11 +5,14 @@ import { useEffect } from "react";
 import Filters from "./Filters/Filters";
 import CharacterList from "./Characters/CharacterList";
 import noImage from "/images/hpnoimage.png";
+import headerLogo from "/images/harry-potter-logo.webp";
 import CharacterCard from "./Characters/CharacterCard";
 import CharactersDetails from "./CharactersDetails";
 import local from '../services/localStorage';
 import { BrowserRouter } from "react-router-dom";
 import ResetButton from "./ResetButton";
+import Header from "./Header";
+import '../styles/App.scss';
 
 
 const App = () => {
@@ -58,9 +61,9 @@ const App = () => {
     })
     .filter ((char) => {
       if (filterStatus === "alive") {
-        return char.status === true;
+        return char.status === "Vivo";
       } else if (filterStatus === "dead") {
-        return char.status === false;
+        return char.status === "Muerto";
       } else {
         return true;
       }
@@ -83,6 +86,7 @@ const App = () => {
       ev.preventDefault;
       setFilterCharacters("")
       setFilterHouse("Gryffindor")
+      setFilterStatus("")
       local.clear()
     }
   
@@ -100,8 +104,8 @@ const App = () => {
   
 
   return <>
-    <h1>Harry Potter</h1>
-    <ResetButton handleReset={handleReset}/>
+    <Header headerLogo={headerLogo} />
+    
 
     <Routes>
       <Route path="/" element={
@@ -113,6 +117,7 @@ const App = () => {
         filterHouse={filterHouse}
         handleFilterStatus={handleFilterStatus}
         filterStatus={filterStatus}/>
+        <ResetButton handleReset={handleReset}/>
         <CharacterList characters={filteredChars} 
         noImage={noImage} />
         </>

@@ -10,15 +10,30 @@ function FilterByStatus({ handleFilterStatus, filterStatus }) {
 
 
   return (
-    <div>
-        <label htmlFor="status">Muerto</label>
-          <input type="checkbox" id="dead" onChange={handleChange} value="dead"/>
+    <div className="filters__status">
+      <label htmlFor="dead" className="filters__status--status">
+        Muerto
+        <input
+          type="checkbox"
+          id="dead"
+          onChange={handleChange}
+          value="dead"
+          checked={filterStatus === "dead"}
+        />
+      </label>
 
-        <label htmlFor="status">Vivo</label>
-          <input type="checkbox" id="alive" onChange={handleChange} value="alive"/>
-        
+      <label htmlFor="alive" className="filters__status--status">
+        Vivo
+        <input
+          type="checkbox"
+          id="alive"
+          onChange={handleChange}
+          value="alive"
+          checked={filterStatus === "alive"}
+        />
+      </label>
     </div>
-  )
-}
+  );
+};
 
 export default FilterByStatus

@@ -1,42 +1,113 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.header {
+  display: flex;
+  margin: auto;
+  width: 600px;
+
+  @media  (min-width: 768px) {
+    width: 600px;
+    
   }
-  to {
-    transform: rotate(360deg);
+
+ 
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #740001;
+  width: 80vw;
+  height: 200px;
+  margin: auto;
+  justify-content: center;
+
+  @media  (min-width: 768px) {
+    width: 800px;
+    height: 400px;
+
+    
+  }
+ 
+
+  &__name {
+    color: white;
+    margin-bottom: 15px;
+
+    @media  (min-width: 768px) {
+      margin-bottom: 35px;
+  
+      
+    }
+
+    &--label {
+      padding-right: 10px;
+      font-size: 20px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+  &--input {
+    width: 250px;
+    height: 23px;
+    border: solid 1px #946b2d;
+    border-radius: 2px;
+  }
+
+  }
+
+  &__house {
+    color: white;
+    margin-bottom: 15px;
+
+    @media  (min-width: 768px) {
+      margin-bottom: 35px;
+  
+      
+    }
+   
+    &--label {
+      padding-right: 10px;
+      font-size: 20px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    &--input {
+      width: 250px;
+      height: 23px;
+      border: solid 1px white;
+      border-radius: 2px;
+      color: #946b2d;
+    }
+
+  }
+
+  &__status {
+    
+
+    &--status {
+      color: white;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin: 10px;
+    }
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.resetButton {
+  display: flex;
+  font-size: 12px;
+  margin: auto;
+  transform: translateY(-30px);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #740001;
+  font-weight: bold;
+  border: solid 1px white;
+  border-radius: 2px;
+  
+
+  @media  (min-width: 768px){
+    transform: translateY(-80px);
+    padding-top: 5px;
+    height: 30px;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  
 }
