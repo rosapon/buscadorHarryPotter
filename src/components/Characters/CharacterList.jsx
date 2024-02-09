@@ -1,9 +1,10 @@
 import CharacterCard from "./CharacterCard";
+import noImage from "../../images/hpnoimage.png";
 import { Link } from "react-router-dom";
 
-function CharacterList({characters, noImage}) {
+function CharacterList({ characters }) {
   const renderCharacters = characters.map((char) => {
-    return <li key={char.id}>
+    return <li key={char.id} className="charList-card">
       <Link to={`/char/${char.id}`} >
         <CharacterCard char={char} noImage={noImage}/>
       </Link>
@@ -14,7 +15,7 @@ function CharacterList({characters, noImage}) {
 
   return (
     <section>
-      <ul>
+      <ul className="CharList">
         {renderCharacters}
       </ul>
     </section>

@@ -4,9 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Filters from "./Filters/Filters";
 import CharacterList from "./Characters/CharacterList";
-import noImage from "/images/hpnoimage.png";
-import headerLogo from "/images/harry-potter-logo.webp";
-import CharacterCard from "./Characters/CharacterCard";
+import headerLogo from "../images/harry-potter-logo.webp"
 import CharactersDetails from "./CharactersDetails";
 import local from '../services/localStorage';
 import { BrowserRouter } from "react-router-dom";
@@ -75,7 +73,7 @@ const App = () => {
 
     useEffect(() => {
       if (filterCharacters && filteredChars.length === 0) {
-        setMsg(`Aunque no lo creas, no existe ningún personaje en toda la saga de Harry Potter que se llame  ${filterCharacters}`);
+        setMsg(`Ups, no encontramos ningún personaje con esas características que se llame  ${filterCharacters} ¿Estás buscando en la casa correcta?`);
       } else {
         setMsg("");
       }
@@ -119,7 +117,7 @@ const App = () => {
         filterStatus={filterStatus}/>
         <ResetButton handleReset={handleReset}/>
         <CharacterList characters={filteredChars} 
-        noImage={noImage} />
+         />
         </>
       } />
 

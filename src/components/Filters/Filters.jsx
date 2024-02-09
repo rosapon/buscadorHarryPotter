@@ -1,7 +1,7 @@
 import FilterByCharacter from "./FilterByCharacter";
 import FilterByHouse from "./FilterByHouse";
 import FilterByStatus from "./FilterByStatus";
-import ResetButton from "../ResetButton";
+
 
 function Filters({ filterCharacters, handleFilterCharacter, handleFilterHouse, filterHouse, handleFilterStatus, filterStatus }) {
   return (
