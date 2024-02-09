@@ -2,11 +2,12 @@ const getDataFromApi = () => {
     return fetch("https://hp-api.onrender.com/api/characters")
     .then((response) => response.json())
     .then((data) => {
-        const cleanData = data.results.map((character) => {
+        const cleanData = data.map((character) => {
             return{
-                picture: data.result.image,
-                name: data.result.name,
-                species: data.result.species
+                picture: character.image,
+                name: character.name,
+                species: character.species,
+                id: character.id
             };
         });
         return cleanData;

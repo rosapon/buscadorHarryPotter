@@ -1,7 +1,9 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import getDataFromApi from "../services/api";
 import { useState } from "react";
 import { useEffect } from "react";
+import Filters from "./Filters/Filters";
+import CharacterList from "./Characters/CharacterList";
 
 const App = () => {
 
@@ -14,11 +16,20 @@ const App = () => {
   }, [])
 
 
-  return (
-    <div>
-      <h1>Hola mundo</h1>
-    </div>
-  );
+  return <>
+    <h1>Harry Potter</h1>
+
+    <Routes>
+      <Route path="/" element={
+        <>
+        <Filters />
+        <CharacterList characters={characters}/>
+        </>
+      } />
+
+
+    </Routes>
+    </>
 };
 
 export default App;

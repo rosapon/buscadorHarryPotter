@@ -1,8 +1,21 @@
-import React from 'react'
+import CharacterCard from "./CharacterCard";
+import { Link } from "react-router-dom";
 
-function CharacterList() {
+function CharacterList({characters}) {
+  const renderCharacters = characters.map((char) => {
+    return <li key={char.id}>
+        <CharacterCard char={char}/>
+    </li>
+  })
+
+
+
   return (
-    <div>CharacterList</div>
+    <section>
+      <ul>
+        {renderCharacters}
+      </ul>
+    </section>
   )
 }
 

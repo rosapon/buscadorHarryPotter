@@ -1,8 +1,12 @@
 import React from 'react'
 
-function CharacterCard() {
+function CharacterCard({ char }) {
   return (
-    <div>CharacterCard</div>
+    <div>
+      <img src={char.picture}/>
+      <h3>{char.name}</h3>
+      <h4>{char.species}</h4>
+    </div>
   )
 }
 
