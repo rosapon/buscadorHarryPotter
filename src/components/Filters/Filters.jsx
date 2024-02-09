@@ -1,11 +1,11 @@
 import FilterByCharacter from "./FilterByCharacter";
 import FilterByHouse from "./FilterByHouse";
 
-function Filters({ filterCharacters, handleFilterCharacter }) {
+function Filters({ filterCharacters, handleFilterCharacter, handleFilterHouse, filterHouse }) {
   return (
     <form action="">
       <FilterByCharacter handleFilterCharacter={handleFilterCharacter}/>
-      <FilterByHouse />
+      <FilterByHouse filterHouse={filterHouse} handleFilterHouse={handleFilterHouse}/>
     </form>
   )
 }

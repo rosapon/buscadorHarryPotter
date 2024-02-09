@@ -9,6 +9,11 @@ const App = () => {
 
   const [characters, setCharacter] = useState([])
   const [filterCharacters, setFilterCharacters] = useState("");
+  const [filterHouse, setFilterHouse] = useState("Gryffindor")
+
+  const CharFilterByHouse = characters.filter((char) => char.house.includes(filterHouse));
+
+ 
 
   useEffect(() => {
     getDataFromApi().then((cleanData) => {
@@ -21,8 +26,17 @@ const App = () => {
     setFilterCharacters(value)
   }
 
+  const handleFilterHouse = (value) => {
+    setFilterHouse(value)
+  }
+
+
+
   const filteredChars = characters
-  .filter((char) => char.name.toLowerCase().includes(filterCharacters));
+  .filter((char) => char.name.toLowerCase().includes(filterCharacters))
+  .filter((char) => {
+    return filterHouse === "Griffindor" ? true : char.house === filterHouse
+  });
 
 
   return <>
@@ -31,7 +45,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={
         <>
-        <Filters filterCharacters={filterCharacters} handleFilterCharacter={handleFilterCharacter}/>
+        <Filters filterCharacters={filterCharacters} handleFilterCharacter={handleFilterCharacter} handleFilterHouse={handleFilterHouse} filterHouse={filterHouse}/>
         <CharacterList characters={filteredChars}/>
         </>
       } />
