@@ -17,6 +17,7 @@ const App = () => {
   const [characters, setCharacter] = useState([])
   const [filterCharacters, setFilterCharacters] = useState(local.get('Búsqueda', ''));
   const [filterHouse, setFilterHouse] = useState("Gryffindor")
+  const [filterStatus, setFilterStatus] = useState("");
 
   const CharFilterByHouse = characters.filter((char) => char.house.includes(filterHouse));
 
@@ -40,6 +41,10 @@ const App = () => {
     setFilterHouse(value)
   }
 
+  const handleFilterStatus = (value) => {
+    setFilterStatus(value)
+  }
+
 
   const [msg, setMsg] = useState("");
 
@@ -50,7 +55,20 @@ const App = () => {
     })
     .filter((char) => {
       return filterHouse === "Griffindor" ? true : char.house === filterHouse;
+    })
+    .filter ((char) => {
+      if (filterStatus === "alive") {
+        return char.status === true;
+      } else if (filterStatus === "dead") {
+        return char.status === false;
+      } else {
+        return true;
+      }
     });
+
+
+ 
+
 
     useEffect(() => {
       if (filterCharacters && filteredChars.length === 0) {
@@ -72,13 +90,9 @@ const App = () => {
 
 
   const { pathname } = useLocation();
-
   const routeData = matchPath("/char/:idChar", pathname)
- 
- 
- const idChar = routeData !== null ? routeData.params.idChar : null;
- 
- const charData = characters.find((char) => char.id === idChar);
+  const idChar = routeData !== null ? routeData.params.idChar : null;
+  const charData = characters.find((char) => char.id === idChar);
 
 
 
@@ -93,8 +107,14 @@ const App = () => {
       <Route path="/" element={
         <>
         <Filters 
-        filterCharacters={filterCharacters} handleFilterCharacter={handleFilterCharacter} handleFilterHouse={handleFilterHouse} filterHouse={filterHouse}/>
-        <CharacterList characters={filteredChars} noImage={noImage} />
+        filterCharacters={filterCharacters} 
+        handleFilterCharacter={handleFilterCharacter} 
+        handleFilterHouse={handleFilterHouse} 
+        filterHouse={filterHouse}
+        handleFilterStatus={handleFilterStatus}
+        filterStatus={filterStatus}/>
+        <CharacterList characters={filteredChars} 
+        noImage={noImage} />
         </>
       } />
 

@@ -1,9 +1,8 @@
-import React from 'react'
 
-function ResetButton() {
+
+function ResetButton({ handleReset }) {
   return (
-    <div>ResetButton</div>
+    <button onClick={handleReset}>Nueva búsqueda</button>
   )
 }
-
 export default ResetButton
