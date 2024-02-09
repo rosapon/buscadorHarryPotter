@@ -1,8 +1,12 @@
-import React from 'react'
+import FilterByCharacter from "./FilterByCharacter";
+import FilterByHouse from "./FilterByHouse";
 
-function Filters() {
+function Filters({ filterCharacters, handleFilterCharacter }) {
   return (
-    <div>Filters</div>
+    <form action="">
+      <FilterByCharacter handleFilterCharacter={handleFilterCharacter}/>
+      <FilterByHouse />
+    </form>
   )
 }
 

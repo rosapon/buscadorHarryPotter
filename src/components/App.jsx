@@ -8,6 +8,7 @@ import CharacterList from "./Characters/CharacterList";
 const App = () => {
 
   const [characters, setCharacter] = useState([])
+  const [filterCharacters, setFilterCharacters] = useState("");
 
   useEffect(() => {
     getDataFromApi().then((cleanData) => {
@@ -16,14 +17,22 @@ const App = () => {
   }, [])
 
 
+  const handleFilterCharacter = (value) => {
+    setFilterCharacters(value)
+  }
+
+  const filteredChars = characters
+  .filter((char) => char.name.toLowerCase().includes(filterCharacters));
+
+
   return <>
     <h1>Harry Potter</h1>
 
     <Routes>
       <Route path="/" element={
         <>
-        <Filters />
-        <CharacterList characters={characters}/>
+        <Filters filterCharacters={filterCharacters} handleFilterCharacter={handleFilterCharacter}/>
+        <CharacterList characters={filteredChars}/>
         </>
       } />
 
