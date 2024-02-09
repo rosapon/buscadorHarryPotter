@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Filters from "./Filters/Filters";
 import CharacterList from "./Characters/CharacterList";
+import noImage from "/images/hpnoimage.png";
 
 const App = () => {
 
@@ -39,6 +40,15 @@ const App = () => {
   });
 
 
+
+
+      
+    
+  
+
+    
+
+
   return <>
     <h1>Harry Potter</h1>
 
@@ -46,7 +56,7 @@ const App = () => {
       <Route path="/" element={
         <>
         <Filters filterCharacters={filterCharacters} handleFilterCharacter={handleFilterCharacter} handleFilterHouse={handleFilterHouse} filterHouse={filterHouse}/>
-        <CharacterList characters={filteredChars}/>
+        <CharacterList characters={filteredChars} noImage={noImage}/>
         </>
       } />
 

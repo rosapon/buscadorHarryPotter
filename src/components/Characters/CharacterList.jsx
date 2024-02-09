@@ -1,10 +1,10 @@
 import CharacterCard from "./CharacterCard";
 import { Link } from "react-router-dom";
 
-function CharacterList({characters}) {
+function CharacterList({characters, noImage}) {
   const renderCharacters = characters.map((char) => {
     return <li key={char.id}>
-        <CharacterCard char={char}/>
+        <CharacterCard char={char} noImage={noImage}/>
     </li>
   })
 
