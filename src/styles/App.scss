@@ -6,14 +6,13 @@ html {
 .header {
   display: flex;
   margin: auto;
-  width: 400px;
+  width: 300px;
 
   @media  (min-width: 768px) {
     width: 600px;
     
   }
 
- 
 }
 
 .filters {
@@ -21,7 +20,7 @@ html {
   flex-direction: column;
   align-items: center;
   background-color: #740001;
-  width: 80vw;
+  width: 450px;
   height: 200px;
   margin: auto;
   justify-content: center;
@@ -156,9 +155,16 @@ html {
 
 .charList__card {
   background-color: #946b2d;
-  display: flex;
-  flex-direction: column;
+
   align-content: center;
+
+  @media  (min-width: 768px){
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+
   
  &--name {
   color: #ffffff;
@@ -180,7 +186,7 @@ html {
  }
  
  &--img {
-  width: 100vw;
+  width: 80vw;
   margin-left: 11px;
   
  
@@ -194,10 +200,21 @@ html {
 }
 
 .charDetails {
+
   background-color: #740001;
-  width: 770px;
+  width: 90%;
   display: flex;
+  flex-direction: column;
   margin: auto;
+  padding: 10px;
+
+  @media  (min-width: 768px){
+    width: 770px;
+    flex-direction: row;
+    margin: auto;
+    padding: 10px;
+  }
+ 
   
 
   &__info {
@@ -218,7 +235,39 @@ html {
       margin-bottom: -15px;
     }
 
+  }
 
+  &__picture {
+    height: 400px;
+  }
+}
+
+
+.backBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  margin-left: 350px;
+  margin-bottom: 5px;
+  cursor: pointer;
+
+  @media  (min-width: 768px) {
+    margin-left: 955px;
 
   }
+
+  &:hover {
+    color: #740001;
+  }
+}
+
+.errormsg {
+  display:flex ;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+
 }

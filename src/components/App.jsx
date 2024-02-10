@@ -11,7 +11,9 @@ import local from '../services/localStorage';
 import { BrowserRouter } from "react-router-dom";
 import ResetButton from "./ResetButton";
 import Header from "./Header";
+import noImage from "../images/hpnoimage.png";
 import '../styles/App.scss';
+import errorpic from "../images/error.jpeg";
 
 
 const App = () => {
@@ -117,17 +119,20 @@ const App = () => {
         handleFilterStatus={handleFilterStatus}
         filterStatus={filterStatus}/>
         <ResetButton handleReset={handleReset}/>
-        <CharacterList characters={filteredChars} 
+        <CharacterList characters={filteredChars} noImage={noImage}
          />
         </>
       } />
 
-      <Route path="/char/:idChar" element={<CharactersDetails charData={charData} />}/>
+      <Route path="/char/:idChar" element={<CharactersDetails charData={charData} noImage={noImage} />}/>
 
 
     </Routes>
 
-    <h2 className="errormsg">{msg}</h2>
+   
+    <h2 className="errormsg__text">{msg}</h2>
+ 
+ 
     </>
     
 };
