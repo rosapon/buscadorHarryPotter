@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function CharacterList({ characters }) {
   const renderCharacters = characters.map((char) => {
-    return <li key={char.id} className="charList-card">
+    return <li key={char.id} className="li">
       <Link to={`/char/${char.id}`} >
         <CharacterCard char={char} noImage={noImage}/>
       </Link>
