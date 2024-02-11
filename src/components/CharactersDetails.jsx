@@ -16,7 +16,7 @@ function CharactersDetails({ charData, noImage }) {
 
   return (
     <div>
-       <Link to="/">
+       <Link to="/modulo-3-evaluacion-final-rosapon/">
         <button className="backBtn"> <i className="fa-solid fa-arrow-left-long"></i>Volver</button>
       </Link>
     

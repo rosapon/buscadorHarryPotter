@@ -102,15 +102,28 @@ const App = () => {
       
   
 
-  return (<>
+  return <>
    <Link to="/">
       <Header headerLogo={headerLogo} />
    </Link>
+
+  {/*  <Filters 
+   filterCharacters={filterCharacters} 
+   handleFilterCharacter={handleFilterCharacter} 
+   handleFilterHouse={handleFilterHouse} 
+   filterHouse={filterHouse}
+   handleFilterStatus={handleFilterStatus}
+   filterStatus={filterStatus}/>
+   <ResetButton handleReset={handleReset}/>
+   <CharacterList characters={filteredChars} noImage={noImage}
+         /> */}
+
+
     
     
 
     <Routes>
-      <Route path="/" element={
+      <Route path="/modulo-3-evaluacion-final-rosapon/" element={
         <>
         <Filters 
         filterCharacters={filterCharacters} 
@@ -136,6 +149,6 @@ const App = () => {
  
     </>
   
-)};
+};
 
 export default App;
