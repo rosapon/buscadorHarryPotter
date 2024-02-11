@@ -1,5 +1,4 @@
 import { Link, Route, Routes, matchPath, useLocation, useParams } from "react-router-dom";
-
 import getDataFromApi from "../services/api";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -103,15 +102,15 @@ const App = () => {
       
   
 
-  return <>
-   <Link to="./">
+  return (<>
+   <Link to="/">
       <Header headerLogo={headerLogo} />
    </Link>
     
     
 
     <Routes>
-      <Route path="./" element={
+      <Route path="/" element={
         <>
         <Filters 
         filterCharacters={filterCharacters} 
@@ -136,7 +135,7 @@ const App = () => {
  
  
     </>
-    
-};
+  
+)};
 
 export default App;
