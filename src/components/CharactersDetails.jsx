@@ -1,7 +1,9 @@
 import { Link, Route, Routes, useParams, useNavigate } from "react-router-dom"
-
+import PropTypes from "prop-types";
 
 function CharactersDetails({ charData, noImage }) {
+  console.log(typeof charData);
+
   const { idChar } = useParams();
   
 
@@ -32,5 +34,10 @@ function CharactersDetails({ charData, noImage }) {
     </div>
   )
 }
+
+CharactersDetails.propTypes = {
+  charData: PropTypes.object,
+  noImage: PropTypes.string
+};
 
 export default CharactersDetails

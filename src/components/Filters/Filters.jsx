@@ -1,7 +1,7 @@
 import FilterByCharacter from "./FilterByCharacter";
 import FilterByHouse from "./FilterByHouse";
 import FilterByStatus from "./FilterByStatus";
-
+import PropTypes from "prop-types";
 
 function Filters({ filterCharacters, handleFilterCharacter, handleFilterHouse, filterHouse, handleFilterStatus, filterStatus }) {
   return (
@@ -12,5 +12,14 @@ function Filters({ filterCharacters, handleFilterCharacter, handleFilterHouse, f
     </form>
   )
 }
+
+Filters.propTypes = {
+  filterCharacters: PropTypes.any,
+  handleFilterCharacter: PropTypes.func,
+  handleFilterHouse: PropTypes.func,
+  filterHouse: PropTypes.string,
+  handleFilterStatus: PropTypes.func,
+  filterStatus: PropTypes.string
+};
 
 export default Filters

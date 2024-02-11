@@ -1,9 +1,14 @@
 import CharacterCard from "./CharacterCard";
-/* import noImage from "../../images/hpnoimage.png"; */
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function CharacterList({ characters, noImage }) {
-  const renderCharacters = characters.map((char) => {
+
+  const abcCharactersList = characters.sort((a, b) => {
+    return a.name.localeCompare(b.name);
+  });
+
+  const renderCharacters = abcCharactersList.map((char) => {
     return <li key={char.id} className="li">
       <Link to={`/char/${char.id}`} >
         <CharacterCard char={char} noImage={noImage}/>
@@ -21,5 +26,11 @@ function CharacterList({ characters, noImage }) {
     </section>
   )
 }
+
+CharacterList.propTypes = {
+  characters: PropTypes.array,
+  noImage: PropTypes.string
+};
+
 
 export default CharacterList

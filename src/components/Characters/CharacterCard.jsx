@@ -1,7 +1,8 @@
-
+import PropTypes from "prop-types";
 
 
 function CharacterCard({ char, noImage }) {
+
   return (
     <div className="charList__card">
       <img className="charList__card--img" src={char.picture ? char.picture : noImage} alt={char.name}/>
@@ -10,5 +11,10 @@ function CharacterCard({ char, noImage }) {
     </div>
   )
 }
+
+CharacterCard.propTypes = {
+  char: PropTypes.object,
+  noImage: PropTypes.string
+};
 
 export default CharacterCard

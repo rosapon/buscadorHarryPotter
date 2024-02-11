@@ -1,8 +1,7 @@
-
+import PropTypes from "prop-types";
 
 function FilterByStatus({ handleFilterStatus, filterStatus }) {
-
-
+  
     const handleChange = (ev) => {
         handleFilterStatus(ev.target.value)
     }
@@ -11,29 +10,34 @@ function FilterByStatus({ handleFilterStatus, filterStatus }) {
 
   return (
     <div className="filters__status">
-      <label htmlFor="dead" className="filters__status--status">
+      <label htmlFor="muerto" className="filters__status--status">
         Muerto
         <input
           type="checkbox"
-          id="dead"
+          id="muerto"
           onChange={handleChange}
-          value="dead"
-          checked={filterStatus === "dead"}
+          value="muerto"
+          checked={filterStatus === "muerto"}
         />
       </label>
 
-      <label htmlFor="alive" className="filters__status--status">
+      <label htmlFor="vivo" className="filters__status--status">
         Vivo
         <input
           type="checkbox"
-          id="alive"
+          id="vivo"
           onChange={handleChange}
-          value="alive"
-          checked={filterStatus === "alive"}
+          value="vivo"
+          checked={filterStatus === "vivo"}
         />
       </label>
     </div>
   );
+};
+
+FilterByStatus.propTypes = {
+  handleFilterStatus: PropTypes.func,
+  filterStatus: PropTypes.string
 };
 
 export default FilterByStatus

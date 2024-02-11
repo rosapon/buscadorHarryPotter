@@ -13,7 +13,6 @@ import ResetButton from "./ResetButton";
 import Header from "./Header";
 import noImage from "../images/hpnoimage.png";
 import '../styles/App.scss';
-import errorpic from "../images/error.jpeg";
 
 
 const App = () => {
@@ -61,9 +60,9 @@ const App = () => {
       return filterHouse === "Griffindor" ? true : char.house === filterHouse;
     })
     .filter ((char) => {
-      if (filterStatus === "alive") {
+      if (filterStatus === "vivo") {
         return char.status === "Vivo";
-      } else if (filterStatus === "dead") {
+      } else if (filterStatus === "muerto") {
         return char.status === "Muerto";
       } else {
         return true;
@@ -76,7 +75,7 @@ const App = () => {
 
     useEffect(() => {
       if (filterCharacters && filteredChars.length === 0) {
-        setMsg(`Ups, no encontramos ningún personaje con esas características que se llame  ${filterCharacters} ¿Estás buscando en la casa correcta?`);
+        setMsg(`Ups, no encontramos ningún personaje con esas características que se llame  ${filterCharacters} ¿Estás buscando en la casa correcta? ¿Seguro que está ${filterStatus}?`);
       } else {
         setMsg("");
       }

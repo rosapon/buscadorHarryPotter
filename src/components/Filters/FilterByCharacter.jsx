@@ -1,6 +1,8 @@
-import React from 'react'
+import PropTypes from "prop-types";
 
 function FilterByCharacter({ filterCharacters, handleFilterCharacter }) {
+
+  
   return (
     
     <div className='filters__name'>
@@ -10,5 +12,11 @@ function FilterByCharacter({ filterCharacters, handleFilterCharacter }) {
     
   )
 }
+
+FilterByCharacter.propTypes = {
+  filterCharacters: PropTypes.any,
+  handleFilterCharacter: PropTypes.func
+};
+
 
 export default FilterByCharacter
