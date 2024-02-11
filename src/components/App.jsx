@@ -105,7 +105,10 @@ const App = () => {
   
 
   return <>
-    <Header headerLogo={headerLogo} />
+   <Link to="/">
+      <Header headerLogo={headerLogo} />
+   </Link>
+    
     
 
     <Routes>
@@ -130,7 +133,7 @@ const App = () => {
     </Routes>
 
    
-    <h2 className="errormsg__text">{msg}</h2>
+    <h2 className="errormsg">{msg}</h2>
  
  
     </>
