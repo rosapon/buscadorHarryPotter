@@ -7,7 +7,7 @@ Se trata de un buscador de personajes de Harry Potter y está hecho con React y 
 
 <b>/// DESCRIPCIÓN ///</b>
 
-En la página principal podemos ver un <b>header</b>, una sección con <b>flitros</b> y el <b>listado de personajes</b>. 
+En la página principal podemos ver un <b>header</b>, una sección con <b>flitros</b> y el <b>listado de personajes</b> ordenado alfabéticamente. 
 
 El primer filtro nos permite <b>buscar a un personaje por su nombre</b>. Si escribimos uno y no lo encuentra, la página nos avisará de que no existe en la saga de Harry potter nadie con este nombre. 
 
@@ -21,12 +21,12 @@ Si queremos hacer otra búsqueda nueva, <b>podemos resetear todo con el botón �
 
 <b>/// DETALLES DE LOS PERSONAJES ///</b>
 
-Al seleccionar cualquier personaje, se abrirá una tarjeta más grande ampliando la información sobre él. Cuando terminemos de ver la información, podemos volver a la página principal con el <b>botón de Volver</b>. Al volver, se seguirá mostrando el resultado de tu última búsqueda.
+Al hacer click cualquier personaje, se abrirá una tarjeta más grande ampliando la información sobre él. Cuando terminemos de ver la información, podemos volver a la página principal con el <b>botón de Volver</b> o simplemente haciendo click en el header. Al volver, se seguirá mostrando el resultado de tu última búsqueda.
 
 
 <b>/// ESTILO ///</b>
 
-Para dar estilo a la página y hacerla <b>responsive</b> he utilizado <b>Sass</b>. En la versión desktop he ordenado la lista de personajes con <b>Grid</b>, mientras que en formato móvil he hecho una sola columna que muestre las imágenes más grandes. 
+Para dar estilo a la página y hacerla <b>responsive</b> he utilizado <b>Sass</b>. En la versión tablet y en la versión desktop he ordenado la lista de personajes con <b>Grid</b>, mientras que en formato móvil he hecho una sola columna que muestre las imágenes más grandes. 
 
 
 ¡Muchas gracias por ver mi proyecto!
