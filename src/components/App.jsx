@@ -104,14 +104,14 @@ const App = () => {
   
 
   return <>
-   
+   <Link to="./">
       <Header headerLogo={headerLogo} />
- 
+   </Link>
     
     
 
     <Routes>
-      <Route path="/" element={
+      <Route path="./" element={
         <>
         <Filters 
         filterCharacters={filterCharacters} 
