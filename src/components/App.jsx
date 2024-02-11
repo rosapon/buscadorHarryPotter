@@ -104,9 +104,9 @@ const App = () => {
   
 
   return <>
-   <Link to="/">
+   
       <Header headerLogo={headerLogo} />
-   </Link>
+ 
     
     
 
