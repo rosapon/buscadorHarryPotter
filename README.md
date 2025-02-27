@@ -1,9 +1,7 @@
 
 ¡Hola!
 
-<b>Este es mi ejercicio final del módulo 3 del bootcamp de Adalab.</b> 
-
-Se trata de un buscador de personajes de Harry Potter y está hecho con React y Sass. 
+Este proyecto es un buscador de personajes de Harry Potter y está hecho con React y Sass. 
 
 <b>/// DESCRIPCIÓN ///</b>
 
